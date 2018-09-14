@@ -11,6 +11,7 @@ class BooksInline(admin.TabularInline):
     model = Book
     extra = 0
 
+
 # Define the admin class
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
@@ -20,7 +21,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 # Register the admin class with the associated model
 admin.site.register(Author, AuthorAdmin)
-
 
 class BooksInstanceInline(admin.TabularInline):
     model = BookInstance
