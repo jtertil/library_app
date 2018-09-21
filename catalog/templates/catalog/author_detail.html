@@ -6,6 +6,12 @@
   <p><strong>Date of birth:</strong> {{ author.date_of_birth }}</p>
   <p><strong>Date of death:</strong> {{ author.date_of_death }}</p>
 
+   {% if user.is_staff %}
+        <hr>
+          <p>Options: <a href="{% url 'author_update' author.pk %}">Update author</a>
+          <a href="{% url 'author_delete' author.pk %}">Delete author</a> </p>
+    {% endif %}
+
   <div style="margin-left:20px;margin-top:20px">
     <h4>Books:</h4>
 

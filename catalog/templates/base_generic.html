@@ -32,6 +32,9 @@
                 <hr>
                 Staff
                 <li><a href="{% url 'borrowed' %}">All borrowed</a></li>
+                <br>
+                <li><a href="{% url 'author_create' %}">Add new author</a></li>
+                <li><a href="{% url 'book_create' %}">Add new book</a></li>
             {% endif %}
         </ul>
       {% endblock %}

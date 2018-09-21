@@ -9,6 +9,12 @@
   <p><strong>Language:</strong> {% for language in book.language.all %} {{ language }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
   <p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
 
+   {% if user.is_staff %}
+        <hr>
+          <p>Options: <a href="{% url 'book_update' book.pk %}">Update book</a>
+          <a href="{% url 'book_delete' book.pk %}">Delete book</a> </p>
+    {% endif %}
+
   <div style="margin-left:20px;margin-top:20px">
     <h4>Copies</h4>
 
